@@ -91,6 +91,7 @@ const Sidebar = ({ ...props }) => {
           }}
         >
           {brand}
+          <div className={classes.sidebarWrapper}>{links}</div>
           {image !== undefined ? (
             <div
               className={classes.background}
