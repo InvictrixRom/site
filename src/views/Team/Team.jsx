@@ -34,8 +34,8 @@ class Team extends React.Component {
         {this.state.teamJson != null &&
           this.state.teamJson.map((prop, key) => {
             return (
-              <GridItem xs={12} sm={12} md={4} style={{"margin-bottom": "80px"}}>
-                <Card profile style={{height: "100%", "margin-bottom": "0px"}}>
+              <GridItem xs={12} sm={12} md={4} style={{"marginBottom": "80px"}} key={key}>
+                <Card profile style={{height: "100%", "marginBottom": "0px"}}>
                   <CardAvatar profile>
                     <img
                       alt={
@@ -45,23 +45,23 @@ class Team extends React.Component {
                         `https://raw.githubusercontent.com/InvictrixRom/team/inv-9.0/avatar/${prop.avatar}`
                       } />
                   </CardAvatar>
-                  <CardBody profile style={{"margin-top": "0px"}}>
-                    <p style={{"margin": "0px"}}>
+                  <CardBody profile style={{"marginTop": "0px"}}>
+                    <div style={{"margin": "0px"}}>
                       <h3 style={{"margin": "0px"}}>
                         {prop.name}
                         <br />
                         <small>{prop.xdaUsername}</small>
                       </h3>
-                    </p>
+                    </div>
                     <p>
                       {prop.duties}
                     </p>
                     <div>
-                      {prop.devices !== null && prop.devices[0] !== "TBD" && prop.devices[0] !== "" && (<div><hr /><h4>Devices</h4></div>)}
+                      {prop.devices !== null && prop.devices.length > 0 && (<div><hr /><h4>Devices</h4></div>)}
                       {prop.devices.map((prop, key) => {
                         if(prop !== "" && prop !== "TBD")
                           return (
-                            <Grid container justify="center">
+                            <Grid container justify="center" key={key}>
                               <Card style={{width: "50%", margin: "2px"}}>
                                 <a href={`https://get.invictrixrom.com/${prop}`}>
                                   <Button style={{color: "#ccc", width: "100%"}}>
