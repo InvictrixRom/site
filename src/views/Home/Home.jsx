@@ -23,6 +23,7 @@ class Dashboard extends React.Component {
       downloads: 12335
     }
   }
+  
   componentDidMount() {
     setInterval(() => {
       this.setState({downloadCounter: this.state.downloadCounter + 2})

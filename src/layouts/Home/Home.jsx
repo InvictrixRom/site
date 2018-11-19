@@ -69,6 +69,7 @@ class App extends React.Component {
     const { classes, ...rest } = this.props;
     return (
       <div className={classes.wrapper}>
+        <h5 style={{marginLeft: "20%"}}>Please excuse us, we're under construction</h5>
         <Sidebar
           routes={dashboardRoutes}
           logoText={"Invictrix ROM"}
